@@ -1,0 +1,148 @@
+/* Shadowtide page styles. System fonts only, no webfonts, no network:
+   the page must render exactly the same offline. */
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #070a18;
+  color: #e8ecff;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.page {
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 12px 16px 24px;
+}
+
+.masthead {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.masthead h1 {
+  margin: 0;
+  font-size: 34px;
+  letter-spacing: 0.35em;
+  color: #ffe98a;
+}
+
+.tagline {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: #9fb0e8;
+}
+
+.hud {
+  display: none;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  background: #101736;
+  border: 1px solid #2a3468;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.hud-item { white-space: nowrap; }
+
+.hud-keys {
+  color: #ffd94a;
+  font-weight: 700;
+}
+
+.hud-keys.keys-full { color: #7dff9a; }
+
+.hud-meter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1 1 160px;
+}
+
+.meter-label {
+  min-width: 86px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #9fb0e8;
+}
+
+.meter-track {
+  display: inline-block;
+  flex: 1;
+  height: 10px;
+  background: #1c2447;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.meter-fill {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: #7dff9a;
+  transition: width 0.15s linear;
+}
+
+.meter-fill.meter-warn { background: #ffb84d; }
+.meter-fill.meter-alert { background: #ff5a40; }
+
+.hud-hidden {
+  visibility: hidden;
+  color: #0b1226;
+  background: #9fe8b0;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+#game-canvas {
+  display: block;
+  width: 960px;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border: 2px solid #2a3468;
+  border-radius: 8px;
+  background: #141a33;
+  cursor: crosshair;
+}
+
+.message {
+  min-height: 22px;
+  margin: 8px 0;
+  text-align: center;
+  font-size: 15px;
+  color: #cdd6ff;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.controls button {
+  padding: 8px 18px;
+  font: inherit;
+  font-weight: 700;
+  color: #0b1226;
+  background: #ffd94a;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.controls button:hover { background: #ffe98a; }
+
+.keys-help {
+  font-size: 13px;
+  color: #9fb0e8;
+}

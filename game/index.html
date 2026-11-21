@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shadowtide — a reef-mouse stealth game</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="page">
+  <header class="masthead">
+    <h1>SHADOWTIDE</h1>
+    <p class="tagline">A reef mouse. Three moon keys. Twelve lantern crabs. Do not be seen.</p>
+  </header>
+
+  <div class="hud" id="hud">
+    <span class="hud-item" id="hud-level">Pool 1 · Low Tide</span>
+    <span class="hud-item hud-keys" id="hud-keys">☾ 0 / 3</span>
+    <span class="hud-meter" title="Suspicion">
+      <span class="meter-label" id="hud-meter-label">unseen</span>
+      <span class="meter-track"><span class="meter-fill" id="hud-meter-fill"></span></span>
+    </span>
+    <span class="hud-item" id="hud-score">Score 0</span>
+    <span class="hud-item" id="hud-time">0:00</span>
+    <span class="hud-item hud-hidden" id="hud-hidden">HIDDEN</span>
+    <span class="hud-item" id="hud-hint">Hints: 1</span>
+  </div>
+
+  <canvas id="game-canvas" width="960" height="640" aria-label="Shadowtide game board"></canvas>
+
+  <p class="message" id="hud-message">Press Enter to play.</p>
+
+  <nav class="controls">
+    <button type="button" id="btn-start">Start</button>
+    <button type="button" id="btn-map">Tide pools</button>
+    <button type="button" id="btn-mute">Mute (M)</button>
+    <span class="keys-help">WASD move · Shift sneak · Space run · H hint · R restart · P pause</span>
+  </nav>
+
+  <pre id="selftest" hidden></pre>
+</main>
+<script type="module" src="src/main.js"></script>
+<script>
+  // Menu buttons drive the same keyboard actions the game already handles.
+  document.getElementById('btn-start').addEventListener('click', () => {
+    window.dispatchEvent(new KeyboardEvent('keydown', { code: 'Enter' }));
+  });
+  document.getElementById('btn-map').addEventListener('click', () => {
+    window.dispatchEvent(new KeyboardEvent('keydown', { code: 'KeyL' }));
+  });
+  document.getElementById('btn-mute').addEventListener('click', () => {
+    window.dispatchEvent(new KeyboardEvent('keydown', { code: 'KeyM' }));
+  });
+</script>
+</body>
+</html>
